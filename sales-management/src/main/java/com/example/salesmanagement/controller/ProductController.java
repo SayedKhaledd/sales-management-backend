@@ -38,5 +38,15 @@ public class ProductController implements AbstractController<ProductService, Pro
         return getService().create(productDto);
     }
 
+    @PutMapping("/update")
+    public ProductDto update(@RequestBody @Valid ProductDto productDto) {
+        return getService().update(productDto);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public void delete(@PathVariable Long id) {
+        getService().delete(id);
+    }
+
 
 }

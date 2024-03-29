@@ -10,4 +10,6 @@ import java.util.List;
 
 public interface ProductDao extends AbstractDao<Product, ProductRepo> {
     List<Product> findAll();
+
+    void markAsDeleted(Long id);
 }

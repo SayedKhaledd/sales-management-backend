@@ -12,4 +12,6 @@ import java.util.List;
 public interface ProductService extends AbstractService<Product, ProductDto, ProductTransformer, ProductDao> {
 
     List<ProductDto> findAll();
+
+    void delete(Long id);
 }

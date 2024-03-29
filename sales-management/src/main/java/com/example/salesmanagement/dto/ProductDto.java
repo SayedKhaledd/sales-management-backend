@@ -1,9 +1,8 @@
 package com.example.salesmanagement.dto;
 
 import com.example.backendcoreservice.dto.AbstractDto;
-import com.example.salesmanagement.model.Category;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -20,10 +19,12 @@ public class ProductDto extends AbstractDto {
     private String name;
     @NotBlank(message = "this field is required")
     private String description;
-    @NotEmpty(message = "this field is required")
+    @NotNull(message = "this field is required")
     private Double price;
-    private Category category;
-    @NotEmpty(message = "this field is required")
+    @NotNull(message = "this field is required")
+    private Integer quantity;
+    private CategoryDto category;
+    @NotNull(message = "this field is required")
     private Long categoryId;
 
 }

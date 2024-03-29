@@ -29,6 +29,9 @@ public class Product extends AbstractEntity {
     @Column(name = "price", nullable = false)
     private Double price;
 
+    @Column(name = "quantity", nullable = false)
+    private Integer quantity;
+
     @JoinColumn(name = "category_id", nullable = false)
     @ManyToOne
     private Category category;

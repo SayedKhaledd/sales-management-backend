@@ -23,5 +23,10 @@ public class ProductDaoImpl implements ProductDao {
     public List<Product> findAll() {
         return getRepo().findAllByMarkedAsDeletedFalse();
     }
+
+    @Override
+    public void markAsDeleted(Long id) {
+        getRepo().markAsDeleted(id);
+    }
 }
 

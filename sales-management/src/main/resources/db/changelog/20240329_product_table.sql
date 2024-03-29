@@ -24,3 +24,6 @@ CREATE TABLE product
     CONSTRAINT product_category_id_fk FOREIGN KEY (category_id) REFERENCES category (id),
     CONSTRAINT product_name_uq UNIQUE (name)
 );
+--changeset sayed:20240329_alter_product_table_add_quantity_column
+ALTER TABLE product
+    ADD COLUMN quantity INT NOT NULL DEFAULT 1;
