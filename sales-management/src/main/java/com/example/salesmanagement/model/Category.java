@@ -15,8 +15,8 @@ import lombok.NoArgsConstructor;
 @Table(name = "category")
 public class Category extends AbstractEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "category_id_seq")
-    @SequenceGenerator(name = "category_id_seq", sequenceName = "category_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "category_id_sequence")
+    @SequenceGenerator(name = "category_id_sequence", sequenceName = "category_id_sequence", allocationSize = 1)
     private Long id;
     @Column(name = "name", nullable = false)
     private String name;

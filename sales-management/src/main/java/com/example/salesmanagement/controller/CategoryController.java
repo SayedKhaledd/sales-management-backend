@@ -21,7 +21,6 @@ public class CategoryController implements AbstractController<CategoryService, C
         return categoryService;
     }
 
-    //a get method to find all categories
     @GetMapping("/all")
     public List<CategoryDto> findAll() {
         return getService().findAll();
