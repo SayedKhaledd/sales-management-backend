@@ -11,6 +11,7 @@ CREATE TABLE product
 (
     id                BIGINT                 NOT NULL DEFAULT NEXTVAL('product_id_sequence'),
     name              VARCHAR(255)           NOT NULL,
+    description       TEXT                   NOT NULL,
     price             DECIMAL(10, 2)         NOT NULL,
     category_id       BIGINT                 NOT NULL,
     created_date      TIMESTAMP              NOT NULL,

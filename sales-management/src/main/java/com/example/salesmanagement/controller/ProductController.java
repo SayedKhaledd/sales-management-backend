@@ -3,9 +3,11 @@ package com.example.salesmanagement.controller;
 import com.example.backendcoreservice.controller.AbstractController;
 import com.example.salesmanagement.dto.ProductDto;
 import com.example.salesmanagement.service.ProductService;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
 @RestController
@@ -19,6 +21,21 @@ public class ProductController implements AbstractController<ProductService, Pro
     @Override
     public ProductService getService() {
         return productService;
+    }
+
+    @GetMapping("/{id}")
+    public ProductDto findById(@PathVariable Long id) {
+        return getService().findById(id);
+    }
+
+    @GetMapping("/all")
+    public List<ProductDto> findAll() {
+        return getService().findAll();
+    }
+
+    @PostMapping("/create")
+    public ProductDto create(@RequestBody @Valid ProductDto productDto) {
+        return getService().create(productDto);
     }
 
 

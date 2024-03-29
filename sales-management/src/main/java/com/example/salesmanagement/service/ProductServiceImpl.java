@@ -1,10 +1,14 @@
 package com.example.salesmanagement.service;
 
+import com.example.salesmanagement.dao.ProductDao;
+import com.example.salesmanagement.dto.CategoryDto;
+import com.example.salesmanagement.dto.ProductDto;
+import com.example.salesmanagement.transformer.ProductTransformer;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import com.example.salesmanagement.dao.ProductDao;
-import com.example.salesmanagement.transformer.ProductTransformer;
+
+import java.util.List;
 
 @Slf4j
 @Service
@@ -23,8 +27,9 @@ public class ProductServiceImpl implements ProductService {
     public ProductTransformer getTransformer() {
         return productTransformer;
     }
-    
 
-
-
+    @Override
+    public List<ProductDto> findAll() {
+        return getTransformer().transformEntitiesToDtos(getDao().findAll());
+    }
 }

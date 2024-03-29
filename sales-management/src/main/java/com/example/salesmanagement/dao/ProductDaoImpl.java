@@ -1,8 +1,12 @@
 package com.example.salesmanagement.dao;
 
-import org.springframework.stereotype.Component;
-import lombok.AllArgsConstructor;
 import com.example.salesmanagement.dao.repo.ProductRepo;
+import com.example.salesmanagement.model.Category;
+import com.example.salesmanagement.model.Product;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 @Component
 @AllArgsConstructor
@@ -14,4 +18,10 @@ public class ProductDaoImpl implements ProductDao {
     public ProductRepo getRepo() {
         return productRepo;
     }
+
+    @Override
+    public List<Product> findAll() {
+        return getRepo().findAllByMarkedAsDeletedFalse();
+    }
 }
+
