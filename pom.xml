@@ -20,6 +20,7 @@
     <modules>
         <module>sales-management</module>
         <module>backend-core-service</module>
+        <module>keycloak-backend-client</module>
     </modules>
 
 

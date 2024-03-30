@@ -3,8 +3,8 @@ package com.example.salesmanagement.controller;
 import com.example.backendcoreservice.controller.AbstractController;
 import com.example.salesmanagement.dto.CategoryDto;
 import com.example.salesmanagement.service.CategoryService;
-import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -31,7 +31,7 @@ public class CategoryController implements AbstractController<CategoryService, C
     }
 
     @PostMapping("/create")
-    public CategoryDto create(@RequestBody @Valid CategoryDto categoryDto) {
+    public CategoryDto create(@RequestBody @Validated CategoryDto categoryDto) {
         return getService().create(categoryDto);
     }
 
